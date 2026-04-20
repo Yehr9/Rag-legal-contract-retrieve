@@ -1,0 +1,47 @@
+paths:
+  input_documents:
+    - data/real/contracts_corpus.jsonl
+  eval_examples: data/real/retrieval_eval.jsonl
+  output_dir: artifacts/real
+
+chunking:
+  policy: structure_aware_v2
+  chunk_size: 512
+  overlap: 100
+  max_size: 1536
+
+retrieval:
+  retriever_model: BAAI/bge-m3
+  reranker_model: BAAI/bge-reranker-v2-m3
+  retrieval_mode: hybrid_rrf
+  use_elasticsearch: true
+  es_url: http://localhost:9200
+  es_index_name: legal_contract_rag_real
+  dense_top_k: 20
+  sparse_top_k: 20
+  top_k_recall: 20
+  top_k_rerank: 5
+  rerank_threshold: 0.0
+
+evaluation:
+  include_answer_eval: false
+
+generation:
+  model_name: null
+  max_new_tokens: 128
+  temperature: 0.0
+  context_chunks: 5
+  fallback_sentence_count: 2
+
+graph:
+  max_retry: 1
+
+query_analysis:
+  enable_variants: true
+  max_variants: 3
+
+routing:
+  min_rerank_score: 0.2
+  min_must_term_coverage: 0.4
+  min_returned_docs: 2
+  min_top1_margin_over_top5_mean: 0.02

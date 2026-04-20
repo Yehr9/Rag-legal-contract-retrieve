@@ -1,0 +1,26 @@
+__pycache__/
+.pytest_cache/
+.coverage
+*.pyc
+*.pyo
+*.pyd
+.venv/
+artifacts/
+.mypy_cache/
+.ruff_cache/
+.idea/
+.vscode/
+*.log
+Thumbs.db
+Desktop.ini
+.codex
+PLAN.md
+
+# model caches
+.cache/
+
+# local/generated data
+data/
+
+# packaging artifacts
+*.egg-info/

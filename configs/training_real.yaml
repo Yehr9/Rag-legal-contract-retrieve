@@ -1,0 +1,28 @@
+paths:
+  input_documents:
+    - data/real/contracts_corpus.jsonl
+  eval_examples: data/real/retrieval_eval.jsonl
+  output_dir: artifacts/real
+
+chunking:
+  policy: structure_aware_v2
+  chunk_size: 512
+  overlap: 100
+  max_size: 1536
+
+retrieval:
+  retriever_model: BAAI/bge-m3
+  reranker_model: BAAI/bge-reranker-v2-m3
+  top_k_recall: 50
+  top_k_rerank: 5
+  rerank_threshold: 0.0
+
+evaluation:
+  include_answer_eval: false
+
+generation:
+  model_name: null
+  max_new_tokens: 128
+  temperature: 0.0
+  context_chunks: 5
+  fallback_sentence_count: 2

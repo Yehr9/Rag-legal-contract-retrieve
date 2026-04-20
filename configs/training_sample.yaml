@@ -1,0 +1,18 @@
+paths:
+  input_documents:
+    - data/sample/contracts.jsonl
+  eval_examples: data/sample/eval_examples.jsonl
+  output_dir: artifacts
+
+chunking:
+  policy: structure_aware_v2
+  chunk_size: 128
+  overlap: 32
+  max_size: 256
+
+retrieval:
+  retriever_model: BAAI/bge-m3
+  reranker_model: BAAI/bge-reranker-v2-m3
+  top_k_recall: 10
+  top_k_rerank: 5
+  rerank_threshold: 0.0

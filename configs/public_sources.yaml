@@ -1,0 +1,10 @@
+sources:
+  - name: cuad_repo_readme
+    url: https://raw.githubusercontent.com/TheAtticusProject/cuad/main/readme.md
+    output_path: data/raw/cuad/readme.md
+  - name: maud_repo_readme
+    url: https://github.com/TheAtticusProject/maud
+    output_path: data/raw/maud/repo.html
+  - name: sec_api_docs
+    url: https://www.sec.gov/edgar/sec-api-documentation
+    output_path: data/raw/sec/sec_api_documentation.html
